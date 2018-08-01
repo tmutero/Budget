@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                 // Check for empty data in the form
                 if (!email.isEmpty() && !password.isEmpty()) {
                     // login user
-                    System.out.println("-------------------------------");
+
                     checkLogin(email, password);
                 } else {
                     // Prompt user to enter credentials

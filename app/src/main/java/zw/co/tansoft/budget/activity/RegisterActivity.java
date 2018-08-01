@@ -1,12 +1,19 @@
 package zw.co.tansoft.budget.activity;
 
 
+
+import zw.co.tansoft.budget.R;
+import zw.co.tansoft.budget.config.AppConfig;
+import zw.co.tansoft.budget.config.AppController;
+import zw.co.tansoft.budget.services.SQLiteHandler;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -20,20 +27,10 @@ import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
-import zw.co.tansoft.budget.R;
-import zw.co.tansoft.budget.config.AppConfig;
-import zw.co.tansoft.budget.config.AppController;
-import zw.co.tansoft.budget.services.SQLiteHandler;
 import zw.co.tansoft.budget.services.SessionManager;
 
-import java.util.HashMap;
-import java.util.Map;
 
-public class RegisterActivity extends AppCompatActivity {
-
+public class RegisterActivity extends Activity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btnRegister;
     private Button btnLinkToLogin;
@@ -45,12 +42,9 @@ public class RegisterActivity extends AppCompatActivity {
     private SQLiteHandler db;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
 
         inputFullName = (EditText) findViewById(R.id.name);
         inputEmail = (EditText) findViewById(R.id.email);
@@ -202,5 +196,4 @@ public class RegisterActivity extends AppCompatActivity {
         if (pDialog.isShowing())
             pDialog.dismiss();
     }
-
 }

@@ -45,16 +45,12 @@ public class MessageFragment extends Fragment {
             for (int i = 0; i < c.getCount(); i++) {
                 String address = c.getString(c.getColumnIndexOrThrow("address"));
 
-
-                    System.out.println("------------------------------------");
                     ListMessage sms = new ListMessage();
                     sms.setBody(c.getString(c.getColumnIndexOrThrow("body")));
                     sms.setNumber(c.getString(c.getColumnIndexOrThrow("address")));
                     sms.setDate_recievied(c.getString(c.getColumnIndexOrThrow("date")));
                     smsList.add(sms);
                     c.moveToNext();
-
-
 
 
             }
