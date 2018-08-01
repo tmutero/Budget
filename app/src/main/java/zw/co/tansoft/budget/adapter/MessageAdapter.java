@@ -37,8 +37,6 @@ public class MessageAdapter extends ArrayAdapter<ListMessage> {
         TextView phoneNumber=rowView.findViewById(R.id.ph_no);
         phoneNumber.setText(smsList.get(position).getNumber());
 
-//        TextView date_received=rowView.findViewById(R.id.date_received);
-//        date_received.setText(smsList.get(position).getDate_recievied());
 
         return rowView;
     }
